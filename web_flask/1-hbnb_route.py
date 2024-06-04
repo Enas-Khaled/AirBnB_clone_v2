@@ -20,5 +20,15 @@ def index():
     return 'Hello HBNB!'
 
 
+@app.route('/hbnb')
+def hbnb_route():
+    """display "HBNB"
+
+    Returns:
+        str: text on the page
+    """
+    return 'HBNB'
+
+
 if __name__ == '__main__':
     app.run(debug=True)
