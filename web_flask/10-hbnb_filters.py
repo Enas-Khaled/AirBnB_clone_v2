@@ -22,11 +22,13 @@ def teardown_db(exception=None):
         storage.close()
 
 
-@app.route('/states_list')
-def states_list(n=None):
+@app.route('/hbnb_filters')
+def hbnb_filters(id=None):
     """displays a HTML page: inside the tag BODY"""
-    states = storage.all('State')
-    return render_template('7-states_list.html', states=states)
+    states = storage.all("State").values()
+    amenities = storage.all("Amenity").values()
+    return render_template('10-hbnb_filters.html',
+                           states=states, amenities=amenities)
 
 
 if __name__ == '__main__':

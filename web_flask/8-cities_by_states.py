@@ -22,11 +22,12 @@ def teardown_db(exception=None):
         storage.close()
 
 
-@app.route('/states_list')
-def states_list(n=None):
+@app.route('/cities_by_states')
+def cities_list(n=None):
     """displays a HTML page: inside the tag BODY"""
-    states = storage.all('State')
-    return render_template('7-states_list.html', states=states)
+    # check 7-states_list.py and html for another way to do this
+    states = storage.all('State').values()
+    return render_template('8-cities_by_states.html', states=states)
 
 
 if __name__ == '__main__':
